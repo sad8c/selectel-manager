@@ -1,23 +1,23 @@
 {
-    "name": "selectel-manager",
-    "version": "0.0.1",
-    "author": {
-        "email": "just.a.login2@gmail.com",
-        "name": "Artem"
-    },
-    "dependencies": {
-        "async": "~0.2.9",
-        "unirest": "~0.0.9"
-    },
-    "keywords": [
-        "selectel",
-        "rest user api",
-        "storage"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/cat-corporation/selectel-manager"
-    },
-    "main": "index",
-    "readmeFilename": "README.md"
+  "name": "selectel-manager",
+  "version": "0.0.1",
+  "author": {
+    "email": "just.a.login2@gmail.com",
+    "name": "Artem"
+  },
+  "dependencies": {
+    "async": "~0.9.x",
+    "request": "~2.45.x"
+  },
+  "keywords": [
+    "selectel",
+    "rest user api",
+    "storage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cat-corporation/selectel-manager"
+  },
+  "main": "index",
+  "readmeFilename": "README.md"
 }
