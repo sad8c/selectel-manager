@@ -12,11 +12,11 @@ var request = require('request'),
 /**
  * Uploads file to the storage. If additional headers are needed, the can be passed with 'additionalHeaders' parameter.
  * @param {String} fullLocalPath
- * @param {String} fullHostingPath
+ * @param {String} hostingPath path without URL
  * @param {Function} callback
  * @param {Object} [additionalHeaders]
  */
-module.exports = function (fullLocalPath, fullHostingPath, callback, additionalHeaders) {
+module.exports = function (fullLocalPath, hostingPath, callback, additionalHeaders) {
   async.waterfall(
     [
       function(wfCb) {
@@ -24,7 +24,7 @@ module.exports = function (fullLocalPath, fullHostingPath, callback, additionalH
       },
       function(file, wfCb) {
         var req = {
-          url: session.xUrl + fullHostingPath,
+          url: session.xUrl + hostingPath,
           method: 'PUT',
           headers: {
             'X-Auth-Token': session.authToken,
