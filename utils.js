@@ -10,6 +10,6 @@
  */
 exports.copyHeaders = function(req, headers) {
   for (var fieldName in headers) {
-    req.headers[fieldName] = headers.fieldName;
+    req.headers[fieldName] = headers[fieldName];
   }
 };
