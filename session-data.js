@@ -3,3 +3,4 @@
  */
 
 exports.xUrl = exports.authToken = null;
+exports.isAuthorized = false;

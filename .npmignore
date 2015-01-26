@@ -1,3 +1,5 @@
 .git*
 npm-debug.log
+test-app.js
+.idea/
 node_modules/
