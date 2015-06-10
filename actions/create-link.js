@@ -11,9 +11,9 @@ var request = require('request'),
  * Creates a public link to a file. If additional headers are needed, the can be passed with 'additionalHeaders'
  * parameter.
  *
- * @param {String} filePath Path to file without URL
+ * @param {String} filePath Path to file without X-URL
  *
- * @param {String} linkAdditionalUrl This string will be added to your temporary URL.
+ * @param {String} linkPath Path to link without X-URL
  *
  * @param {String} linkType
  * 'x-storage/symlink' - simple link,
@@ -26,8 +26,8 @@ var request = require('request'),
  *
  * @param {Object} [additionalHeaders]
  */
-module.exports = function(filePath, linkAdditionalUrl, linkType, callback, additionalHeaders) {
-  var fullLink = session.xUrl + linkAdditionalUrl,
+module.exports = function(filePath, linkPath, linkType, callback, additionalHeaders) {
+  var fullLink = session.xUrl + linkPath,
     req = {
     url: fullLink,
     method: 'PUT',
@@ -47,7 +47,7 @@ module.exports = function(filePath, linkAdditionalUrl, linkType, callback, addit
       if (data.statusCode == 201) {
         callback(null, {
           success: true,
-          link: fullLink
+          link: fullLink.replace('https:', 'http:').replace('.ru', '.com')
         });
       } else {
         callback(null, {
